@@ -3,48 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>『こめびと』第7号（テーマ：風）v2 ゼロベース刷新 B4見開き表紙スタジオ</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>『こめびと』第7号（テーマ：風）v3.0 表紙制作＆B4見開き検証スタジオ</title>
+  <link rel="stylesheet" href="./style.css?v=3">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <div>
-        <span class="badge">v2.0 ゼロベース刷新 ｜ テーマ：風 ／ JIS B4ヨコ（364×257mm）見開き設計</span>
-        <h1>『こめびと』第7号 表紙ビジュアル＆B4クロッパースタジオ</h1>
-        <p class="subtitle">向かって右＝表表紙（B5）・左＝裏表紙（B5）｜ラック5m視認性・ロゴ14パターン検証・10MB以下JPEG出力</p>
+        <span class="badge">v3.0 全面再構築 ｜ テーマ：風 ／ JIS B4ヨコ（364×257mm → 3640×2570px）見開き設計</span>
+        <h1>『こめびと』第7号 表紙アート＆インタラクティブ風紋版画スタジオ</h1>
+        <p class="subtitle">向かって右＝表表紙（B5）・左＝裏表紙（B5）｜木版画・日光青写真・立体切り絵 ＆ 手で風を吹かせるネイティブB4出力</p>
       </div>
       <div class="header-cta">
         <div id="countdown" class="countdown">締切：2026年11月15日(日) 23:59</div>
-        <a class="btn btn-primary" href="https://008451a0.form.kintoneapp.com/public/bd1ecb2b39b8c59412a318e794da4e38bd80a43ac678ce2be8c8ae729abbf21c" target="_blank" rel="noopener noreferrer">公式応募フォームを開く ↗</a>
+        <a class="btn btn-gold" href="https://008451a0.form.kintoneapp.com/public/bd1ecb2b39b8c59412a318e794da4e38bd80a43ac678ce2be8c8ae729abbf21c" target="_blank" rel="noopener noreferrer">公式応募フォームを開く ↗</a>
       </div>
     </div>
   </header>
 
   <main class="container">
     <nav class="tabs" role="tablist">
-      <button class="tab active" data-tab="gallery" onclick="switchTab('gallery')">① v2刷新JPEG 3作品＆ラック・ロゴ検証</button>
-      <button class="tab" data-tab="studio" onclick="switchTab('studio')">② 実写カメラ写真 → B4応募JPEG変換</button>
-      <button class="tab" data-tab="submit" onclick="switchTab('submit')">③ v2コメント1タップコピー＆提出チェック</button>
+      <button class="tab active" data-tab="gallery" onclick="switchTab('gallery')">① v3本命3作品＆製本ラック検証</button>
+      <button class="tab" data-tab="windcraft" onclick="switchTab('windcraft')">② 手で風を描くB4版画エンジン（非AI・3640px）</button>
+      <button class="tab" data-tab="studio" onclick="switchTab('studio')">③ 実写写真 → B4光学クロッパー</button>
+      <button class="tab" data-tab="submit" onclick="switchTab('submit')">④ v3決定稿コピー＆提出チェック</button>
     </nav>
 
-    <!-- TAB 1: GALLERY -->
+    <!-- TAB 1: GALLERY (v3 / v2 / v1 Evolution) -->
     <section id="tab-gallery" class="tab-panel active">
-      <!-- Generation Switcher & 3-Up B5 Rack Test -->
       <div class="rack-header">
         <div>
-          <strong>施設・ホテルラック 5m視認性比較（B5表表紙単体＝右半分）</strong>
-          <span class="rack-sub">クリックで下のB4見開き検証ステージを切り替えます</span>
+          <strong>ホテル・施設ラック 5m視認性テスト（B5表表紙＝右半分 製本モック）</strong>
+          <span class="rack-sub">カードをクリックすると下のB4見開きステージが切り替わります</span>
         </div>
         <div class="gen-switcher">
-          <button class="gen-btn active" id="gen-v2" onclick="switchGeneration('v2')">★ v2：ゼロベース刷新（本命3作品）</button>
-          <button class="gen-btn" id="gen-v1" onclick="switchGeneration('v1')">v1：初期試作（比較アーカイブ）</button>
+          <button class="gen-btn active" id="gen-v3" onclick="switchGeneration('v3')">★ v3：全面再構築（木版・青写真・立体切り絵）</button>
+          <button class="gen-btn" id="gen-v2" onclick="switchGeneration('v2')">v2：和紙静物試作</button>
+          <button class="gen-btn" id="gen-v1" onclick="switchGeneration('v1')">v1：初期試作</button>
         </div>
       </div>
 
-      <div class="rack-grid" id="rackGrid">
-        <!-- Populated dynamically by app.js -->
-      </div>
+      <div class="rack-grid" id="rackGrid"></div>
 
       <div class="control-bar">
         <div class="work-selector">
@@ -53,13 +52,14 @@
           <button class="work-btn" id="wbtn-3" onclick="selectWork(3)">作品③</button>
         </div>
         <div class="view-toggles">
-          <label><input type="checkbox" id="toggleGuide" checked onchange="updateGalleryOverlay()"> ロゴ・文字ガイド表示</label>
+          <label><input type="checkbox" id="toggleGuide" checked onchange="updateGalleryOverlay()"> ロゴ・エッセイ帯シミュレーション</label>
           <select id="logoTone" onchange="updateGalleryOverlay()">
-            <option value="dark">墨黒ロゴ（明背景向け）</option>
-            <option value="white">白抜きロゴ（影あり・暗背景向け）</option>
-            <option value="indigo">濃藍ロゴ（浅葱・生成り向け）</option>
+            <option value="dark">墨黒ロゴ（明空・生成り向け）</option>
+            <option value="white">白抜きロゴ・濃影（藍・暗背景向け）</option>
+            <option value="indigo">濃藍ロゴ（浅葱・朝空向け）</option>
+            <option value="softwhite">白抜きロゴ・薄影</option>
           </select>
-          <label><input type="checkbox" id="toggleB5Only" onchange="updateGalleryOverlay()"> 表表紙（右B5）単体で見る</label>
+          <label><input type="checkbox" id="toggleB5Only" onchange="updateGalleryOverlay()"> 表表紙（右B5）製本単体で見る</label>
         </div>
       </div>
 
@@ -72,7 +72,8 @@
 
         <div class="stage-wrapper" id="stageWrapper">
           <div class="b4-stage" id="b4Stage">
-            <img id="galleryImg" src="./assets/komebito7_v2_work1_minori.jpg" alt="作品プレビュー">
+            <img id="galleryImg" src="./assets/komebito7_v3_work1_asayuge.jpg?v=3" alt="作品プレビュー">
+            <div class="spine-shadow" id="spineShadow"></div>
             <div class="fold-line" id="foldLine"></div>
             <div class="masthead-overlay tone-dark" id="mastheadOverlay">
               <div class="emblem-circle">S</div>
@@ -91,40 +92,76 @@
 
         <div class="work-meta">
           <div class="work-info">
-            <h2 id="workTitle">作品①『風わたる丘、実りのひととき』</h2>
-            <p class="spec-pill" id="workSpec">JIS B4ヨコ比率（3640 × 2570 px）｜sRGB JPEG｜10MB以下適合｜文字焼き込みなし</p>
+            <h2 id="workTitle">作品①『朝の湯気、窓辺の春風』</h2>
+            <p class="spec-pill" id="workSpec">JIS B4ヨコ（3640 × 2570 px）｜sRGB JPEG｜10MB以下検証済｜文字焼き込みなし</p>
             <p id="workWhy" class="why-box"></p>
             <p id="workComment" class="comment-box"></p>
             <details class="craft-recipe">
-              <summary>非AI・自宅30分実写クラフト再現メモ（手元で実物撮影する場合の素材と光）</summary>
+              <summary>非AI・実物制作＆撮影アプローチ（手元で100%非AI実作する場合の最短手順）</summary>
               <p id="workRecipe"></p>
             </details>
           </div>
           <div class="work-actions">
-            <a id="downloadJpgBtn" class="btn btn-primary btn-block" href="./assets/komebito7_v2_work1_minori.jpg" download="komebito7_v2_work1_minori.jpg">このB4 JPEGをダウンロード</a>
+            <a id="downloadJpgBtn" class="btn btn-primary btn-block" href="./assets/komebito7_v3_work1_asayuge.jpg" download="komebito7_v3_work1_asayuge.jpg">このB4 JPEG（3640×2570）を保存</a>
             <button class="btn btn-secondary btn-block" onclick="copyCurrentComment()">この作品のコメント文をコピー</button>
-            <div class="all-downloads" id="allDownloadsBox">
-              <span>v2 3作品まとめてDL：</span>
-              <a href="./assets/komebito7_v2_work1_minori.jpg" download>v2作品①.jpg</a>
-              <a href="./assets/komebito7_v2_work2_yohaku.jpg" download>v2作品②.jpg</a>
-              <a href="./assets/komebito7_v2_work3_yunagi.jpg" download>v2作品③.jpg</a>
-            </div>
+            <div class="all-downloads" id="allDownloadsBox"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TAB 2: REAL PHOTO B4 CROPPER STUDIO -->
+    <!-- TAB 2: INTERACTIVE HAND-DRAWN WIND PRINTMAKING ENGINE (NON-AI NATIVE 3640x2570) -->
+    <section id="tab-windcraft" class="tab-panel">
+      <div class="notice-banner accent-blue">
+        <strong>【非AI・ネイティブ 3640×2570px グラフィック制作室】マウスや指でキャンバスをなぞって「あなた自身の風」を吹かせてください：</strong>
+        AI画像生成モデルを一切使わず、あなたの手のストローク（風向き・強さ）と数理物理曲線だけで穂のしなりと風紋をリアルタイム描画し、引き伸ばしボケ一切なしの超高精細 B4 JPEG（<code>3640 × 2570 px</code>・10MB以下）として即保存できます（募集対象「写真・アート・グラフィック・その他」対応）。
+      </div>
+
+      <div class="studio-grid">
+        <div class="studio-canvas-area">
+          <canvas id="windCanvas" width="1820" height="1285"></canvas>
+          <p class="canvas-hint">★ キャンバス上を左から右へドラッグ（スワイプ）すると、その軌跡に沿って風が吹き抜け、稲穂のしなりと風粒が変化します（書き出し時は赤枠やロゴガイドは自動で消えます）。</p>
+        </div>
+        <div class="studio-controls">
+          <h3>1. 版画・染色スタイル</h3>
+          <select id="wcPalette" class="full-select" onchange="renderWindCraft()">
+            <option value="cyanotype">藍晒しサイアノタイプ（日光青写真・白抜きロゴ最適）</option>
+            <option value="morning">朝霧と黄金穂の木版摺り（生成り空・墨ロゴ最適）</option>
+            <option value="twilight">夕凪と琥珀の型染め（群青〜茜空・白抜きロゴ最適）</option>
+          </select>
+
+          <h3>2. 風の強さ・穂の密度（または画面を直接スワイプ）</h3>
+          <label class="slider-label">風のしなり強度：<span id="wcWindVal">68%</span>
+            <input type="range" id="wcWind" min="20" max="100" value="68" oninput="renderWindCraft()">
+          </label>
+          <label class="slider-label">舞い上がる風粒・種子の数：<span id="wcSeedsVal">42</span>
+            <input type="range" id="wcSeeds" min="10" max="90" value="42" oninput="renderWindCraft()">
+          </label>
+          <label class="slider-label">穂と草の配置シード：<span id="wcSeedNumVal">7</span>
+            <input type="range" id="wcSeedNum" min="1" max="30" value="7" oninput="regenerateWindField()">
+          </label>
+          <label class="check-row"><input type="checkbox" id="wcShowGuide" checked onchange="renderWindCraft()"> 『こめびと』ロゴ・エッセイ帯ガイドを表示（保存画像には含まれません）</label>
+
+          <button class="btn btn-secondary btn-block" onclick="randomizeWindStroke()">新しい風のひと吹きを生成</button>
+
+          <h3>3. ネイティブ 3640×2570px JPEG 出力</h3>
+          <button class="btn btn-primary btn-block" onclick="exportNativeWindJpeg()">この風紋グラフィックをB4保存（3640×2570px）</button>
+          <div id="wcExportStatus" class="export-status"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: REAL PHOTO B4 CROPPER STUDIO -->
     <section id="tab-studio" class="tab-panel">
       <div class="notice-banner">
         <strong>スマホ／カメラ実写写真を一瞬でB4応募規格（3640×2570px・10MB以下）に変換：</strong>
-        公式要項に「AI生成されていないもの」の規定があるため、手元で和紙や白い布・窓辺を撮影した生写真をここで読み込めば、AI加工ゼロ・純粋な光学トリミングのみで応募用B4 JPEGを書き出せます（画像は外部サーバーへ送信されません）。
+        朝の食卓の湯気や、窓辺の白いカーテン、手元の日光写真キットなどをスマホで撮影した生写真を読み込めば、AI加工ゼロ・純粋な光学トリミングのみで応募用B4 JPEGを書き出せます（外部サーバー送信なし）。
       </div>
 
       <div class="studio-grid">
         <div class="studio-canvas-area">
           <canvas id="cropCanvas" width="1820" height="1285"></canvas>
-          <p class="canvas-hint">画像をドラッグして位置調整 ／ 下のスライダーで拡大縮小（書き出し時は赤枠やロゴ文字は消え、純粋な写真のみが3640×2570pxのJPEGになります）</p>
+          <p class="canvas-hint">画像をドラッグして位置調整 ／ スライダーで拡大縮小（書き出し時はガイド枠・ロゴ文字は消え、純粋な写真のみが3640×2570pxのJPEGになります）</p>
         </div>
         <div class="studio-controls">
           <h3>1. 写真を選択（カメラ起動可）</h3>
@@ -137,7 +174,7 @@
           <label class="slider-label">明るさ微調整（光学露出）：<span id="brightVal">100%</span>
             <input type="range" id="brightRange" min="80" max="125" value="100" oninput="renderStudio()">
           </label>
-          <label class="check-row"><input type="checkbox" id="studioShowLogo" checked onchange="renderStudio()"> 『こめびと』ロゴ位置ガイドを表示（書き出し画像には含まれません）</label>
+          <label class="check-row"><input type="checkbox" id="studioShowLogo" checked onchange="renderStudio()"> 『こめびと』ロゴ位置ガイドを表示（保存画像には含まれません）</label>
           <label class="check-row"><input type="checkbox" id="studioFlipH" onchange="renderStudio()"> 左右を反転（風の流れを左→右に揃える）</label>
 
           <h3>3. B4応募規格JPEGを保存</h3>
@@ -147,30 +184,30 @@
       </div>
     </section>
 
-    <!-- TAB 3: SUBMIT DECK -->
+    <!-- TAB 4: SUBMIT DECK -->
     <section id="tab-submit" class="tab-panel">
       <div class="submit-grid">
         <div class="card">
-          <h2>v2 ゼロベース刷新版：作品①〜③ 応募コメント文（1タップコピー）</h2>
-          <p class="submit-note">※言語学ペダントリーや企業への露骨なヨイショを排し、誰の身体記憶にもある「風の瞬間」と視覚の余白（「あっ、お米に見える」という発見）だけを残したv2決定稿です。</p>
+          <h2>v3 決定稿：作品①〜③ 応募コメント文（1タップコピー）</h2>
+          <p class="submit-note">※言語学のこじつけ・企業年号ヨイショ・平面和紙の自己満足をすべて捨て、誰の記憶にもある「風といい時間」の核心だけを端正に射抜いたv3決定稿です。</p>
           <div class="copy-item">
             <div class="copy-head">
-              <strong>応募作品①『風わたる丘、実りのひととき』の説明文</strong>
-              <button class="btn btn-sm" onclick="copyV2Comment(1)">コピー</button>
+              <strong>応募作品①『朝の湯気、窓辺の春風』の説明文</strong>
+              <button class="btn btn-sm" onclick="copyV3Comment(1)">コピー</button>
             </div>
             <textarea id="comment-text-1" rows="5" readonly></textarea>
           </div>
           <div class="copy-item">
             <div class="copy-head">
-              <strong>応募作品②『風がつくる余白』の説明文</strong>
-              <button class="btn btn-sm" onclick="copyV2Comment(2)">コピー</button>
+              <strong>応募作品②『五分間の風を晒す』の説明文（タブ②の藍晒しグラフィックにもそのまま使用可）</strong>
+              <button class="btn btn-sm" onclick="copyV3Comment(2)">コピー</button>
             </div>
             <textarea id="comment-text-2" rows="5" readonly></textarea>
           </div>
           <div class="copy-item">
             <div class="copy-head">
-              <strong>応募作品③『夕凪のチェックイン』の説明文</strong>
-              <button class="btn btn-sm" onclick="copyV2Comment(3)">コピー</button>
+              <strong>応募作品③『風わたる街と窓辺』の説明文</strong>
+              <button class="btn btn-sm" onclick="copyV3Comment(3)">コピー</button>
             </div>
             <textarea id="comment-text-3" rows="5" readonly></textarea>
           </div>
@@ -182,7 +219,7 @@
             <li><label><input type="checkbox"> <strong>電話番号・郵便番号</strong>は「半角数字・ハイフンなし」で入力したか</label></li>
             <li><label><input type="checkbox"> <strong>JPEG・ヨコ向き・10MB以下</strong>になっているか（最大3作品まで同時添付可）</label></li>
             <li><label><input type="checkbox"> <strong>送信直前にファイルを添付</strong>したか（添付後3日経過するとエラーになるフォーム仕様）</label></li>
-            <li><label><input type="checkbox"> 表表紙（右半分）の上部中央ロゴ枠・右端エッセイ枠に障害物が被っていないか（v2全3作品クリア済）</label></li>
+            <li><label><input type="checkbox"> 表表紙（右半分）の上部ロゴ枠・背の折り目に主役が潰れていないか（v3全3作品検証クリア済）</label></li>
             <li><label><input type="checkbox"> 公式規定（未発表・他コンテスト未応募・AI生成規定）を確認したか</label></li>
           </ul>
           <div class="submit-cta-box">
@@ -194,6 +231,6 @@
   </main>
 
   <div id="toast" class="toast">コピーしました</div>
-  <script src="./app.js"></script>
+  <script src="./app.js?v=3"></script>
 </body>
 </html>
