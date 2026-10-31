@@ -1,33 +1,89 @@
-const WORKS = {
-  1: {
-    title: "作品①『風選のあと、唇にのこる音』",
-    file: "./assets/komebito7_work1_fusen_wind.jpg",
-    downloadName: "komebito7_work1_fusen_wind.jpg",
-    defaultTone: "white",
-    comment: `作品名：『風選のあと、唇にのこる音』
+const CATALOG = {
+  v2: {
+    1: {
+      shortLabel: "① 風わたる丘、実りのひととき",
+      title: "作品①『風わたる丘、実りのひととき』",
+      tag: "本命｜染めちぎり和紙×木目×白陶粒コラージュ",
+      file: "./assets/komebito7_v2_work1_minori.jpg",
+      downloadName: "komebito7_v2_work1_minori.jpg",
+      defaultTone: "dark",
+      why: "【v2ゼロベース刷新の核】v1の地味なベージュ一色を破壊し、5m先のホテル・介護施設ラックから一目で惹きつける柿色・若草・黄金・藍の立体和紙コラージュへ刷新。生米を直置きする説明臭さを捨て、白い陶粒2つが「寄り添うお米」に自然と見えてくる発見の余白（第6号流木の選出ロジック）と、右上の完璧な生成り和紙ロゴ余白を両立しました。",
+      recipe: "【素材】生成り和紙（台紙A3）、色和紙（黄土・柿・若草・藍を手でちぎる）、白い艶消し小石または白粘土粒2個、乾燥稲穂2〜3本、麻糸。晴れた昼の窓際斜光で真上からスマホ1x撮影。",
+      comment: `作品名：『風わたる丘、実りのひととき』
+旅先の車窓や散歩の途中で、風が吹き渡るたびに稲穂や草木が一斉に同じ方向へなびき、目に見えないはずの「風の通り道」が大地の上に浮かび上がる瞬間があります。
+柿色や若草色、黄金色、藍色の手ちぎり和紙と薄い杉板、麻糸を幾重にも重ねて風が駆け抜ける丘のうねりをつくり、その陽だまりの先に、ふっくらとした二粒の白い造形と風に揺れる穂先を添えました。大地を吹き抜けた風が実りを育て、やがて誰かの温かい食卓や穏やかな団らんへと届いていく、豊かな時間の連なりを込めています。`
+    },
+    2: {
+      shortLabel: "② 風がつくる余白",
+      title: "作品②『風がつくる余白』",
+      tag: "対抗｜淡浅葱×純白ちぎり和紙の立体レリーフ",
+      file: "./assets/komebito7_v2_work2_yohaku.jpg",
+      downloadName: "komebito7_v2_work2_yohaku.jpg",
+      defaultTone: "indigo",
+      why: "【v2ゼロベース刷新の核】旧『風選のあと、唇にのこる音』から、視覚と無関係だったヒンディー語音声学（ファル／パル）のこじつけ・喪中グレーの暗い背景・企業ヨイショ文を全撤去。2027年1月新春号にふさわしい澄んだ浅葱色の手漉き和紙の上で、「風が余分なものをさらって心地よい余白と一粒の光を残す」本質だけを純白ちぎり和紙の立体レリーフへ昇華しました。",
+      recipe: "【素材】淡い浅葱色（水色系）の手漉き和紙（台紙A3）、白い楮和紙（細長いリボン状と中央の繭状に手でちぎって立体的に重ねる）、金箔入り和紙の小片4つ。朝の低い横光で紙の影を立たせて真上から撮影。",
+      comment: `作品名：『風がつくる余白』
+朝一番に窓を細く開けて空気を入れ替えるとき、風は何かを運び込むだけでなく、部屋にこもっていた重たい空気や昨日までの慌ただしさをさらって、気持ちのよい「余白」をつくってくれます。
+澄んだ朝の空気を思わせる淡い浅葱色の手漉き和紙の上に、手でちぎった白和紙を幾重にも立体的に重ね、左から右へ吹き抜ける風のうねりと朝の光影を形づくりました。軽やかに舞う紙片と金箔の風粒の先に、光を宿した白い繭のような一粒が静かに残ります。心地よい風が通り過ぎたあとにだけ生まれる、澄み切ったひとときを表現しました。`
+    },
+    3: {
+      shortLabel: "③ 夕凪のチェックイン",
+      title: "作品③『夕凪のチェックイン』",
+      tag: "大穴｜群青〜琥珀の夕空和紙×透け白麻ヴェール",
+      file: "./assets/komebito7_v2_work3_yunagi.jpg",
+      downloadName: "komebito7_v2_work3_yunagi.jpg",
+      defaultTone: "white",
+      why: "【v2ゼロベース刷新の核】v1作品②の致命傷だった「右半分（B5表表紙）に折るとカーテンが消えて空き部屋の白壁しか残らない構図ミス」を完全解消。群青から琥珀へ溶ける夕空の彩色和紙の上で、白い薄麻のヴェールが表表紙の中央へ帆のようにふわりと膨らみ、白抜き『こめびと』ロゴが夜明けの星のように映える一枚に仕上げました。",
+      recipe: "【素材】藍〜橙にぼかし染めした和紙（または水彩画用紙A3）、極薄の白い麻布（ハンカチ・オーガンジー）、小さな花びら型の切り紙3片。夕方（または暖色デスクライト）の低い斜光で布の透け感を出して撮影。",
+      comment: `作品名：『夕凪のチェックイン』
+旅先の宿に着いて荷物を置いたあとや、一日の仕事を終えて帰ってきた夕方、窓を開けて白いカーテンがふわりと大きく膨らむ瞬間が好きです。目に見えない風が布を帆のように揺らすとき、張りつめていた肩の力がふっと抜けて、自分のための穏やかな時間がゆっくりと動き出します。
+群青から琥珀色へと移ろう夕暮れの彩色和紙の上に、極薄の白麻と小さな切り紙を重ね、横からの夕風と斜光が布に宿る瞬間を閉じ込めました。ページをめくる前のひと呼吸が、少しだけ深くなるような一冊になればと願っています。`
+    }
+  },
+  v1: {
+    1: {
+      shortLabel: "v1-① 風選のあと（旧）",
+      title: "［v1初期試作］作品①『風選のあと、唇にのこる音』",
+      tag: "旧v1｜暗灰和紙＋生米直置き（言語学接ぎ木・負債比較用）",
+      file: "./assets/komebito7_work1_fusen_wind.jpg",
+      downloadName: "komebito7_work1_fusen_wind.jpg",
+      defaultTone: "white",
+      why: "【v1の反省記録（基礎リサーチ）】暗いグレー背景が1月発行号として沈んで見える点、生米・籾殻の直置きで発見の余白が消えている点、画像に見えない音声学（ファル／パル）をコメントに無理やり接ぎ木した点を洗い出し、v2『風がつくる余白』『風わたる丘、実りのひととき』へ全面刷新しました。",
+      recipe: "v1アーカイブ（比較参照用）。応募にはv2への切り替えを推奨します。",
+      comment: `作品名：『風選のあと、唇にのこる音』
 昔からお米づくりの仕上げには、風を送って軽い籾殻だけを吹き飛ばし、実の詰まったお米だけを手元に残す「風選（ふうせん）」という工程があります。また音声学の世界でも、人が「実り（ヒンディー語でファル）」という言葉を発するときには唇から小さな息の風が吹き出し、「ひととき（パル）」と呟くときには風が静かに止まります。
 本作は、和紙と木肌の上に置いたお米と薄い紙片・籾殻に、左（裏表紙）から右（表表紙）へひと吹きの風を送り、余分な殻が弧を描いて舞い去ったあとに、艶やかなお米の粒が陽だまりの中に寄り添って残る瞬間を捉えたものです。日々の慌ただしさや余分な殻を心地よい風がさらっていったあとに、手元に静かに残る確かなひととき――1952年の精米店から始まった『こめびと』の時間を、目に見える風の軌跡として表現しました。`
-  },
-  2: {
-    title: "作品②『まだ家具のない部屋に、最初の風を通す』",
-    file: "./assets/komebito7_work2_first_breeze.jpg",
-    downloadName: "komebito7_work2_first_breeze.jpg",
-    defaultTone: "dark",
-    comment: `作品名：『まだ家具のない部屋に、最初の風を通す』
+    },
+    2: {
+      shortLabel: "v1-② 最初の風（旧）",
+      title: "［v1初期試作］作品②『まだ家具のない部屋に、最初の風を通す』",
+      tag: "旧v1｜空き部屋写真風（右B5表表紙で主役消失）",
+      file: "./assets/komebito7_work2_first_breeze.jpg",
+      downloadName: "komebito7_work2_first_breeze.jpg",
+      defaultTone: "dark",
+      why: "【v1の反省記録】カーテンが左半分（裏表紙）にしかないため、右半分（B5表表紙）に折ると白い壁と床だけになる構造欠陥を特定し、v2作品③『夕凪のチェックイン』で完全に解決しました。",
+      recipe: "v1アーカイブ（比較参照用）。",
+      comment: `作品名：『まだ家具のない部屋に、最初の風を通す』
 新しい住まいへ引っ越した日、あるいは旅先のホテルにチェックインした夕暮れ、私たちが最初にするのは窓を開けて「風を通す」ことです。どんなに美しく整えられた空間も、最初の風が通り抜けた瞬間に初めて、その人の「いい時間」が流れる生きた場所へと変わります。
 本作は、風の軌跡を繊細な針穴（ピンホール）として透かした薄い美濃和紙を窓辺に吊るし、秋風を受けてふわりと帆のように膨らんだ和紙と、その針穴を通り抜けた太陽光が無垢の木の床面に描いた「お米の粒のような光の風紋」を捉えた作品です。目に見えない風が光と影を連れて部屋へ入ってくる、始まりのひとときを込めました。`
-  },
-  3: {
-    title: "作品③『二千年の風名を、麻布の舟に積む』",
-    file: "./assets/komebito7_work3_wind_names_linen.jpg",
-    downloadName: "komebito7_work3_wind_names_linen.jpg",
-    defaultTone: "dark",
-    comment: `作品名：『二千年の風名を、麻布の舟に積む』
+    },
+    3: {
+      shortLabel: "v1-③ 二千年の風名（旧）",
+      title: "［v1初期試作］作品③『二千年の風名を、麻布の舟に積む』",
+      tag: "旧v1｜麻袋モノトーン（ラック遠目での色彩不足）",
+      file: "./assets/komebito7_work3_wind_names_linen.jpg",
+      downloadName: "komebito7_work3_wind_names_linen.jpg",
+      defaultTone: "dark",
+      why: "【v1の反省記録】麻布に枯れ穂1本のみで色彩コントラストと風の躍動感が弱かったため、v2作品①『風わたる丘、実りのひととき』の多色ちぎり和紙コラージュへ全面進化させました。",
+      recipe: "v1アーカイブ（比較参照用）。",
+      comment: `作品名：『二千年の風名を、麻布の舟に積む』
 かつて日本の農村や海辺では、稲穂を揺らす風にも舟を送り出す風にも、「やませ」「いなさ」「はえ」「まぜ」と一つずつ固有の名前をつけて風と対話していました。季節風（モンスーン）の語源である「季節を運ぶ風（mawsim）」もまた、海を越えて人と食文化をつないだ風です。
 本作は、精米袋や旅の帆を思わせる生成りの麻布の上に、淡墨の風の流線と麻糸を添え、同じ風向きに寄り添う黄金色の稲穂と白い桜貝を自然光の斜光で捉えたミクストメディア作品です。大地で育まれたお米の旅路と、人生という長い旅路に吹く穏やかな追い風を重ね合わせています。`
+    }
   }
 };
 
+let currentGen = "v2";
 let currentWorkId = 1;
 
 function showToast(msg) {
@@ -43,13 +99,77 @@ function switchTab(name) {
   if (name === "studio") renderStudio();
 }
 
+function switchGeneration(gen) {
+  currentGen = gen;
+  document.getElementById("gen-v2").classList.toggle("active", gen === "v2");
+  document.getElementById("gen-v1").classList.toggle("active", gen === "v1");
+  renderRackCards();
+  updateWorkButtons();
+  selectWork(currentWorkId);
+
+  const dlBox = document.getElementById("allDownloadsBox");
+  if (gen === "v2") {
+    dlBox.innerHTML = `
+      <span>v2 3作品まとめてDL：</span>
+      <a href="./assets/komebito7_v2_work1_minori.jpg" download>v2作品①.jpg</a>
+      <a href="./assets/komebito7_v2_work2_yohaku.jpg" download>v2作品②.jpg</a>
+      <a href="./assets/komebito7_v2_work3_yunagi.jpg" download>v2作品③.jpg</a>
+    `;
+  } else {
+    dlBox.innerHTML = `
+      <span>旧v1アーカイブDL：</span>
+      <a href="./assets/komebito7_work1_fusen_wind.jpg" download>v1作品①.jpg</a>
+      <a href="./assets/komebito7_work2_first_breeze.jpg" download>v1作品②.jpg</a>
+      <a href="./assets/komebito7_work3_wind_names_linen.jpg" download>v1作品③.jpg</a>
+    `;
+  }
+}
+
+function updateWorkButtons() {
+  const works = CATALOG[currentGen];
+  [1, 2, 3].forEach(i => {
+    document.getElementById("wbtn-" + i).textContent = works[i].shortLabel;
+  });
+}
+
+function renderRackCards() {
+  const grid = document.getElementById("rackGrid");
+  const works = CATALOG[currentGen];
+  grid.innerHTML = [1, 2, 3].map(i => {
+    const w = works[i];
+    const activeCls = i === currentWorkId ? "active" : "";
+    return `
+      <div class="rack-card ${activeCls}" id="rcard-${i}" onclick="selectWork(${i})">
+        <div class="rack-b5-cover tone-${w.defaultTone}">
+          <img src="${w.file}" alt="${w.title}">
+          <div class="rack-masthead">
+            <div class="rack-issue">第7号</div>
+            <div class="rack-logo">こめびと</div>
+          </div>
+          <div class="rack-essay">辻 仁成</div>
+        </div>
+        <div class="rack-caption">
+          <strong>${w.shortLabel}</strong>
+          <span>${w.tag}</span>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
 function selectWork(id) {
   currentWorkId = id;
-  const w = WORKS[id];
-  [1, 2, 3].forEach(i => document.getElementById("wbtn-" + i).classList.toggle("active", i === id));
+  const w = CATALOG[currentGen][id];
+  [1, 2, 3].forEach(i => {
+    document.getElementById("wbtn-" + i).classList.toggle("active", i === id);
+    const rc = document.getElementById("rcard-" + i);
+    if (rc) rc.classList.toggle("active", i === id);
+  });
   document.getElementById("galleryImg").src = w.file;
   document.getElementById("workTitle").textContent = w.title;
+  document.getElementById("workWhy").textContent = w.why;
   document.getElementById("workComment").textContent = w.comment;
+  document.getElementById("workRecipe").textContent = w.recipe;
   const dl = document.getElementById("downloadJpgBtn");
   dl.href = w.file;
   dl.setAttribute("download", w.downloadName);
@@ -78,11 +198,11 @@ function copyText(str) {
 }
 
 function copyCurrentComment() {
-  copyText(WORKS[currentWorkId].comment);
+  copyText(CATALOG[currentGen][currentWorkId].comment);
 }
 
-function copyWorkComment(id) {
-  copyText(WORKS[id].comment);
+function copyV2Comment(id) {
+  copyText(CATALOG.v2[id].comment);
 }
 
 function updateCountdown() {
@@ -216,7 +336,6 @@ function renderStudio() {
 
   if (document.getElementById("studioShowLogo").checked) {
     ctx.save();
-    // Center fold
     ctx.strokeStyle = "rgba(255,255,255,0.85)";
     ctx.lineWidth = 4;
     ctx.setLineDash([16, 12]);
@@ -225,7 +344,6 @@ function renderStudio() {
     ctx.lineTo(canvas.width / 2, canvas.height);
     ctx.stroke();
 
-    // Title safe zone (right half upper)
     ctx.strokeStyle = "rgba(220, 60, 40, 0.9)";
     ctx.fillStyle = "rgba(220, 60, 40, 0.14)";
     const tx = canvas.width * 0.585;
@@ -240,7 +358,6 @@ function renderStudio() {
     ctx.textAlign = "center";
     ctx.fillText("こめびと", tx + tw / 2, ty + th * 0.76);
 
-    // Vertical essay safe zone
     const ex = canvas.width * 0.875;
     const ey = canvas.height * 0.31;
     const ew = canvas.width * 0.085;
@@ -290,9 +407,9 @@ function exportCleanB4Jpeg() {
 
 window.addEventListener("DOMContentLoaded", () => {
   [1, 2, 3].forEach(i => {
-    document.getElementById("comment-text-" + i).value = WORKS[i].comment;
+    document.getElementById("comment-text-" + i).value = CATALOG.v2[i].comment;
   });
-  selectWork(1);
+  switchGeneration("v2");
   updateCountdown();
   setInterval(updateCountdown, 60000);
   initStudio();

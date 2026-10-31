@@ -235,6 +235,175 @@ body {
   text-shadow: 0 1px 4px rgba(255,255,255,0.5);
 }
 
+.masthead-overlay.tone-indigo {
+  color: #1c313a;
+  text-shadow: 0 1px 6px rgba(255,255,255,0.65);
+}
+
+/* 3-Up B5 Hotel/Facility Rack Preview & v2/v1 Switcher */
+.rack-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.rack-sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-left: 8px;
+}
+
+.gen-switcher {
+  display: flex;
+  gap: 6px;
+}
+
+.gen-btn {
+  border: 1px solid var(--border);
+  background: #ebe6dc;
+  color: var(--ink);
+  padding: 6px 13px;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gen-btn.active {
+  background: #1f4e5f;
+  color: #fff;
+  border-color: #1f4e5f;
+}
+
+.rack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 720px) {
+  .rack-grid { grid-template-columns: 1fr; }
+}
+
+.rack-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rack-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.rack-card.active {
+  border-color: var(--accent);
+  background: #fffdf9;
+  box-shadow: 0 6px 18px rgba(125, 78, 45, 0.15);
+}
+
+.rack-b5-cover {
+  position: relative;
+  width: 96px;
+  flex-shrink: 0;
+  aspect-ratio: 182 / 257;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.22);
+  background: #333;
+}
+
+.rack-b5-cover img {
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateX(-50%);
+  display: block;
+}
+
+.rack-b5-cover.tone-white { color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,0.55); }
+.rack-b5-cover.tone-dark { color: #26211c; text-shadow: 0 1px 3px rgba(255,255,255,0.6); }
+.rack-b5-cover.tone-indigo { color: #1c313a; text-shadow: 0 1px 4px rgba(255,255,255,0.65); }
+
+.rack-masthead {
+  position: absolute;
+  top: 12%;
+  left: 8%;
+  right: 8%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.rack-issue { font-size: 0.45rem; letter-spacing: 0.1em; }
+.rack-logo {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 0.98rem;
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+}
+
+.rack-essay {
+  position: absolute;
+  top: 34%;
+  right: 7%;
+  writing-mode: vertical-rl;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 0.48rem;
+  letter-spacing: 0.1em;
+}
+
+.rack-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rack-caption strong { font-size: 0.9rem; line-height: 1.35; }
+.rack-caption span { font-size: 0.76rem; color: var(--muted); line-height: 1.35; }
+
+.why-box {
+  margin: 0 0 10px;
+  background: #eef5f7;
+  border-left: 4px solid #1f4e5f;
+  padding: 9px 12px;
+  border-radius: 5px;
+  font-size: 0.83rem;
+  color: #1a323b;
+}
+
+.craft-recipe {
+  margin-top: 10px;
+  font-size: 0.83rem;
+  background: #f8f5ee;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.craft-recipe summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.craft-recipe p { margin: 6px 0 2px; color: var(--ink); }
+
+.submit-note {
+  font-size: 0.83rem;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
 .emblem-circle {
   position: absolute;
   top: 5.5%;
