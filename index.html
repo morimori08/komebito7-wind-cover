@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>『こめびと』第7号（テーマ：風）B4見開き表紙スタジオ＆JPEG書き出し</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <span class="badge">テーマ：風 ／ JIS B4ヨコ（364×257mm）見開き設計</span>
+        <h1>『こめびと』第7号 表紙ビジュアル＆B4クロッパースタジオ</h1>
+        <p class="subtitle">向かって右＝表表紙（B5）・左＝裏表紙（B5）｜ロゴ視認性14パターン検証＆10MB以下JPEG一発出力</p>
+      </div>
+      <div class="header-cta">
+        <div id="countdown" class="countdown">締切：2026年11月15日(日) 23:59</div>
+        <a class="btn btn-primary" href="https://008451a0.form.kintoneapp.com/public/bd1ecb2b39b8c59412a318e794da4e38bd80a43ac678ce2be8c8ae729abbf21c" target="_blank" rel="noopener noreferrer">公式応募フォームを開く ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="gallery" onclick="switchTab('gallery')">① 完成JPEG 3作品＆ロゴ検証</button>
+      <button class="tab" data-tab="studio" onclick="switchTab('studio')">② 実写カメラ写真 → B4応募JPEG変換</button>
+      <button class="tab" data-tab="submit" onclick="switchTab('submit')">③ コメント1タップコピー＆提出チェック</button>
+    </nav>
+
+    <!-- TAB 1: GALLERY -->
+    <section id="tab-gallery" class="tab-panel active">
+      <div class="control-bar">
+        <div class="work-selector">
+          <button class="work-btn active" id="wbtn-1" onclick="selectWork(1)">作品① 風選のあと、唇にのこる音</button>
+          <button class="work-btn" id="wbtn-2" onclick="selectWork(2)">作品② まだ家具のない部屋に、最初の風を通す</button>
+          <button class="work-btn" id="wbtn-3" onclick="selectWork(3)">作品③ 二千年の風名を、麻布の舟に積む</button>
+        </div>
+        <div class="view-toggles">
+          <label><input type="checkbox" id="toggleGuide" checked onchange="updateGalleryOverlay()"> ロゴ・文字ガイド表示</label>
+          <select id="logoTone" onchange="updateGalleryOverlay()">
+            <option value="white">白抜きロゴ（影あり）</option>
+            <option value="dark">墨黒ロゴ</option>
+          </select>
+          <label><input type="checkbox" id="toggleB5Only" onchange="updateGalleryOverlay()"> 表表紙（右B5）単体で見る</label>
+        </div>
+      </div>
+
+      <div class="preview-card">
+        <div class="spread-labels" id="spreadLabels">
+          <span>◀ 裏表紙（左B5：182×257mm）</span>
+          <span>▼ センター折り目（背）</span>
+          <span>表表紙（右B5：182×257mm） ▶</span>
+        </div>
+
+        <div class="stage-wrapper" id="stageWrapper">
+          <div class="b4-stage" id="b4Stage">
+            <img id="galleryImg" src="./assets/komebito7_work1_fusen_wind.jpg" alt="作品プレビュー">
+            <div class="fold-line" id="foldLine"></div>
+            <div class="masthead-overlay tone-white" id="mastheadOverlay">
+              <div class="emblem-circle">S</div>
+              <div class="title-zone">
+                <div class="issue-num">第7号</div>
+                <div class="komebito-logo">こめびと</div>
+              </div>
+              <div class="essay-zone">
+                <span>巻頭エッセイ</span>
+                <strong>辻 仁成</strong>
+                <span>「風のゆくえ」</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-meta">
+          <div class="work-info">
+            <h2 id="workTitle">作品①『風選のあと、唇にのこる音』</h2>
+            <p class="spec-pill" id="workSpec">JIS B4ヨコ比率（3640 × 2570 px）｜sRGB JPEG｜10MB以下適合｜文字焼き込みなし</p>
+            <p id="workComment" class="comment-box"></p>
+          </div>
+          <div class="work-actions">
+            <a id="downloadJpgBtn" class="btn btn-primary btn-block" href="./assets/komebito7_work1_fusen_wind.jpg" download="komebito7_work1_fusen_wind.jpg">このB4 JPEGをダウンロード</a>
+            <button class="btn btn-secondary btn-block" onclick="copyCurrentComment()">この作品のコメント文をコピー</button>
+            <div class="all-downloads">
+              <span>3作品まとめてDL：</span>
+              <a href="./assets/komebito7_work1_fusen_wind.jpg" download>作品①.jpg</a>
+              <a href="./assets/komebito7_work2_first_breeze.jpg" download>作品②.jpg</a>
+              <a href="./assets/komebito7_work3_wind_names_linen.jpg" download>作品③.jpg</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: REAL PHOTO B4 CROPPER STUDIO -->
+    <section id="tab-studio" class="tab-panel">
+      <div class="notice-banner">
+        <strong>スマホ／カメラ実写写真を一瞬でB4応募規格（3640×2570px・10MB以下）に変換：</strong>
+        公式要項に「AI生成されていないもの」の規定があるため、手元でお米や和紙・窓辺を撮影した生写真をここで読み込めば、AI加工ゼロ・純粋な光学トリミングのみで応募用B4 JPEGを書き出せます（画像は外部サーバーへ送信されません）。
+      </div>
+
+      <div class="studio-grid">
+        <div class="studio-canvas-area">
+          <canvas id="cropCanvas" width="1820" height="1285"></canvas>
+          <p class="canvas-hint">画像をドラッグして位置調整 ／ 下のスライダーで拡大縮小（書き出し時は赤枠やロゴ文字は消え、純粋な写真のみが3640×2570pxのJPEGになります）</p>
+        </div>
+        <div class="studio-controls">
+          <h3>1. 写真を選択（カメラ起動可）</h3>
+          <input type="file" id="photoInput" accept="image/*" class="file-input">
+
+          <h3>2. 構図・ロゴ余白あわせ</h3>
+          <label class="slider-label">ズーム倍率：<span id="zoomVal">100%</span>
+            <input type="range" id="zoomRange" min="100" max="260" value="100" oninput="renderStudio()">
+          </label>
+          <label class="slider-label">明るさ微調整（光学露出）：<span id="brightVal">100%</span>
+            <input type="range" id="brightRange" min="80" max="125" value="100" oninput="renderStudio()">
+          </label>
+          <label class="check-row"><input type="checkbox" id="studioShowLogo" checked onchange="renderStudio()"> 『こめびと』ロゴ位置ガイドを表示（書き出し画像には含まれません）</label>
+          <label class="check-row"><input type="checkbox" id="studioFlipH" onchange="renderStudio()"> 左右を反転（風の流れを左→右に揃える）</label>
+
+          <h3>3. B4応募規格JPEGを保存</h3>
+          <button class="btn btn-primary btn-block" onclick="exportCleanB4Jpeg()">応募用B4 JPEG（3640×2570px）を書き出す</button>
+          <div id="exportStatus" class="export-status"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: SUBMIT DECK -->
+    <section id="tab-submit" class="tab-panel">
+      <div class="submit-grid">
+        <div class="card">
+          <h2>作品①〜③ 応募コメント文（1タップコピー）</h2>
+          <div class="copy-item">
+            <div class="copy-head">
+              <strong>応募作品①についてのコメント</strong>
+              <button class="btn btn-sm" onclick="copyWorkComment(1)">コピー</button>
+            </div>
+            <textarea id="comment-text-1" rows="5" readonly></textarea>
+          </div>
+          <div class="copy-item">
+            <div class="copy-head">
+              <strong>応募作品②についてのコメント</strong>
+              <button class="btn btn-sm" onclick="copyWorkComment(2)">コピー</button>
+            </div>
+            <textarea id="comment-text-2" rows="5" readonly></textarea>
+          </div>
+          <div class="copy-item">
+            <div class="copy-head">
+              <strong>応募作品③についてのコメント</strong>
+              <button class="btn btn-sm" onclick="copyWorkComment(3)">コピー</button>
+            </div>
+            <textarea id="comment-text-3" rows="5" readonly></textarea>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>提出直前5秒チェックリスト（Kintoneフォーム仕様）</h2>
+          <ul class="checklist">
+            <li><label><input type="checkbox"> <strong>電話番号・郵便番号</strong>は「半角数字・ハイフンなし」で入力したか</label></li>
+            <li><label><input type="checkbox"> <strong>JPEG・ヨコ向き・10MB以下</strong>になっているか（最大3作品まで同時添付可）</label></li>
+            <li><label><input type="checkbox"> <strong>送信直前にファイルを添付</strong>したか（添付後3日経過するとエラーになるフォーム仕様）</label></li>
+            <li><label><input type="checkbox"> 表表紙（右半分）の上部中央ロゴ枠・右端エッセイ枠に強い文字や障害物が被っていないか</label></li>
+            <li><label><input type="checkbox"> 公式規定（未発表・他コンテスト未応募・AI生成規定）を確認したか</label></li>
+          </ul>
+          <div class="submit-cta-box">
+            <a class="btn btn-primary btn-block" href="https://008451a0.form.kintoneapp.com/public/bd1ecb2b39b8c59412a318e794da4e38bd80a43ac678ce2be8c8ae729abbf21c" target="_blank" rel="noopener noreferrer">『こめびと』第7号 公式応募フォームへ進む ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">コピーしました</div>
+  <script src="./app.js"></script>
+</body>
+</html>
